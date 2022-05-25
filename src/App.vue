@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <MyHeader/>
     <router-view/>
+    <MyFooter/>
   </div>
 </template>
 
+<script>
+// @ is an alias to /src
+import MyFooter from '@/components/MyFooter.vue'
+import MyHeader from './components/MyHeader.vue'
+
+export default {
+  name: 'HomeView',
+  components: {
+    MyFooter,
+    MyHeader
+}
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
