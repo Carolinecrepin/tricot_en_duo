@@ -3,6 +3,7 @@
         <div class="wool-detail">
             <div class="picture">
                 <img v-bind:src="detailWools.picture">
+                <p>Retrouvez tous nos modèles tricotés avec la qualité {{detailWools.name}}</p>
             </div>
             <div class="wool-card">
                 <h2 class="essential-informations">{{detailWools.name}}</h2>
