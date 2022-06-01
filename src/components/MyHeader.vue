@@ -12,6 +12,7 @@
                 <router-link to="/patterns" class="nav-link">Patrons</router-link>
                 <router-link to="/materials" class="nav-link">Matériels</router-link>
                 <router-link to="/tutorials" class="nav-link">Tutos</router-link>
+                
                 <div class="icon">
                     <i class="fa-solid fa-basket-shopping"></i>
                     <i class="fa-solid fa-user"></i>
