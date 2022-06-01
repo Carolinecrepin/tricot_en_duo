@@ -1,6 +1,7 @@
 <template>
     <div>
         <p>Tous les patrons</p>
+        <p class="filter">Filtrer <i class="fa-solid fa-angle-down"></i></p> 
         <div class="all-cards">
             <div v-for="(pattern, index) in patterns" :key="index">
                 <div class="pattern-card">
@@ -77,5 +78,14 @@ export default {
     border:none;
     color:white;
     font-weight: bolder;  
+}
+.filter{
+    font-weight: bold;
+    display:flex;
+    justify-content: flex-end;
+    padding-right: 5em;
+}
+.fa-angle-down:before {
+    margin: 0.7em;
 }
 </style>

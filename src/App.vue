@@ -10,12 +10,12 @@
 // @ is an alias to /src
 import MyFooter from '@/components/MyFooter.vue'
 import MyHeader from './components/MyHeader.vue'
-
 export default {
   name: 'HomeView',
   components: {
     MyFooter,
-    MyHeader
+    MyHeader,
+
 }
 }
 </script>

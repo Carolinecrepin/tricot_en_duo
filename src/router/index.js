@@ -9,6 +9,7 @@ import TutorialView from '../views/TutorialView.vue'
 import CgvView from '../views/CgvView.vue'
 import TermsOfUseView from '../views/TermsOfUseView.vue'
 import PersonalDataView from '../views/PersonalDataView.vue'
+import LoginView from '../views/LoginView.vue'
 
 Vue.use(VueRouter)
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/personal-data',
     name: 'personal-data',
     component:PersonalDataView
+  },
+  {
+    path: '/connexion',
+    name: 'login',
+    component:LoginView
   },
 
 ]
