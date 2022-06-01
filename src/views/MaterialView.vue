@@ -1,12 +1,12 @@
 <template>
     <div>
-        <p>Tous les patrons</p>
+        <p>Les pelotes</p>
         <div class="all-cards">
-            <div v-for="(pattern, index) in patterns" :key="index">
-                <div class="pattern-card">
-                    <img v-bind:src="pattern.picture">
-                    <p class="pattern-title">{{ pattern.title }}</p>
-                    <button class="btn" @click="pushToPattern(pattern)">voir plus</button>
+            <div v-for="(wool, index) in wools" :key="index">
+                <div class="wool-card">
+                    <img v-bind:src="wool.picture" alt="wool picture">
+                    <p class="wool-title">{{ wool.name }}</p>
+                    <button class="btn" @click="pushToWool(wool)">voir plus</button>
                 </div>
             </div>
         </div>
@@ -17,39 +17,36 @@
 export default {
     data(){
         return {
-            patterns:{},
+            wools:{},
         }
     },
     async mounted() {
-        await this.getTotalPatterns();
+        await this.getTotalWools();
     },
 
     methods:{
-        async getTotalPatterns(){
-            const response = await fetch(`https://127.0.0.1:8000/api/patterns`, {
+        async getTotalWools(){
+            const response = await fetch(`https://127.0.0.1:8000/api/wool`, {
                 headers:{
                     accept: 'application/json'
                 }
             });
-            const patterns = await response.json();
-            this.patterns = patterns;
-            console.log(patterns)
+            const wools = await response.json();
+            this.wools = wools;
         },
-              
         //fonction qui permet quand on clique sur le bouton router.push d'aller sur la page de detail du post
-        pushToPattern(pattern) {
-        this.$router.push({ path: "/detailPattern", query: { id: pattern.id } });
+        pushToWool(wool) {
+        this.$router.push({ path: "/detailWool", query: { id: wool.id } });
         },
-}
+    }
 }
 </script>
 
 <style scoped>
-.pattern-card{
+.wool-card{
     display: flex;
     flex-direction: column;
     max-width: 15em;
-    max-height: 23em;
     background-color:#F4E6E2;
     padding:1em;
     margin:2em;
@@ -61,7 +58,7 @@ export default {
     flex-wrap: wrap;
     margin: 1em;
 }
-.pattern-title{
+.wool-title{
     font-weight: bold;
 }
 .btn{
