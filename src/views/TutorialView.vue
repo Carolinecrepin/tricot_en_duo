@@ -10,6 +10,7 @@
                 <p>tuto en images</p>
             </div>
             <div class="tuto-card">
+                <img src="@/assets/image-tuto-bibliotheque.png" alt="tuto video" class="tuto-img">
                 <p>Bibliothèque de points</p>
             </div>
         </div>
@@ -27,6 +28,8 @@
     flex-direction: column;
     background-color:#F4E6E2;
     border-radius:10px;
+    margin:2em;
+    max-width: 25em;
 }
 .tuto-img{
     display: flex;

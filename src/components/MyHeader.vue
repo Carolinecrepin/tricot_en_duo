@@ -12,7 +12,7 @@
                 <router-link to="/patterns" class="nav-link">Patrons</router-link>
                 <router-link to="/materials" class="nav-link">Matériels</router-link>
                 <router-link to="/tutorials" class="nav-link">Tutos</router-link>
-                
+             
                 <div class="icon">
                     <i class="fa-solid fa-basket-shopping"></i>
                     <i class="fa-solid fa-user"></i>
@@ -54,11 +54,17 @@ export default {}
 .icon{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin:1em;
     padding:1em;
 }
 .fa-basket-shopping:before, .fa-shopping-basket:before{
     margin:1em;
+    font-size: 150%;
+}
+.fa-user:before {
+    margin:1em;
+    font-size:150%
 }
 
 </style>

@@ -1,26 +1,30 @@
 <template>
     <div>
         <div class="wool-detail">
-            <div>
+            <div class="picture">
                 <img v-bind:src="detailWools.picture">
             </div>
             <div class="wool-card">
-                <h2>{{detailWools.name}}</h2>
-                <p>{{detailWools.price}}€ la pelote</p>
-                <p>Couleur: {{detailWools.color}}</p>
-                <p>quantité: </p>
+                <h2 class="essential-informations">{{detailWools.name}}</h2>
+                <p class="essential-informations">{{detailWools.price}}€ la pelote</p>
+                <p class="essential-informations">Couleur: {{detailWools.color}}</p>
+                <p class="essential-informations">quantité: </p>
+                <input type="quantity" id="quantity" name="quantity" class="quantity"
+                min="1" max="100">
                 <button class="btn">Ajouter au panier</button>
-                <p>Taille d'aiguilles: n°{{detailWools.sizeNeedle}}</p>
-                <p>couleurs : {{detailWools.color}}</p>
-                <h3>Composition:</h3>
-                <p>{{detailWools.material}}</p>
-                <h3>Description:</h3>
-                <p>{{detailWools.description}}</p>
-                <h3>Entretien:</h3>
-                <p>{{detailWools.maintenance}}</p>
+                <h3 class="title">Taille d'aiguilles:</h3>
+                    <p class="detail">n°{{detailWools.sizeNeedle}}</p>
+                <h3 class="title">couleurs :</h3>
+                    <p class="detail">{{detailWools.color}}</p>
+                <h3 class="title">Composition:</h3>
+                    <p class="detail">{{detailWools.material}}</p>
+                <h3 class="title">Description:</h3>
+                    <p class="detail">{{detailWools.description}}</p>
+                <h3 class="title">Entretien:</h3>
+                    <p class="detail">{{detailWools.maintenance}}</p>
             </div>
         </div>
-        <button class="return-btn">Retour</button>
+        <button class="return-btn" @click="$router.go(-1)">Retour</button>
     </div>
 </template>
 
@@ -65,7 +69,8 @@ export default {
     margin:1em;
     padding:1em;
     max-width: 60em;
-    justify-content: space-between;
+    text-align: left;
+    padding-left: 2em;
 }
 .return-btn{
     display: flex;
@@ -97,5 +102,28 @@ export default {
     border:none;
     color:white;
     font-weight: bolder; 
+}
+.picture{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    max-width: 80%;
+    max-height: 80%;
+}
+.essential-informations{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    line-height:50%
+}
+.detail{
+    padding-left: 1.5em;
+}
+.quantity{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-self: center;
 }
 </style>

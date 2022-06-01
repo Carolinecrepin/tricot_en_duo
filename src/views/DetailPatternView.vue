@@ -1,25 +1,26 @@
 <template>
     <div>
         <div class="patron-detail">
-            <div>
+            <div class="picture">
                 <img v-bind:src="detailPatterns.picture">
             </div>
             <div class="modele-card">
-                <h2>{{detailPatterns.title}}</h2>
-                <h3>Niveau: {{detailPatterns.level}}</h3>
-                <p>Prix:{{detailPatterns.price}}</p>
-                <h4>Matériels:</h4>
+                <h2 class="essential-informations">{{detailPatterns.title}}</h2>
+                <h3 class="essential-informations">Niveau: {{detailPatterns.level}}</h3>
+                <p class="essential-informations">Prix:{{detailPatterns.price}}€</p>
+                <b><p class="essential-informations">Achetez ce modèle</p></b>
+                <h3 class="title">Matériels:</h3>
                 <p></p>
-                <h4>Composition:</h4>
-                <p>matière 100% coton</p>
-                <h4>Description: </h4>
-                <p>{{detailPatterns.description}}</p>
-                <h4>Points utilisés: </h4>
-                <p>{{detailPatterns.stitch}}</p>
-                <p class="link">retrouvez tous nos tutos ici</p>
+                <h3 class="title">Composition:</h3>
+                    <p class="detail">matière 100% coton</p>
+                <h3 class="title">Description: </h3>
+                    <p class="detail">{{detailPatterns.description}}</p>
+                <h3 class="title">Points utilisés: </h3>
+                    <p class="detail">{{detailPatterns.stitch}}</p>
+                <router-link to="/tutorials" class="link">Retrouvez tous nos tutos ici</router-link>
             </div>
         </div>
-        <button class="return-btn">Retour</button>
+        <button class="return-btn" @click="$router.go(-1)">Retour</button>
     </div>
 </template>
 
@@ -63,7 +64,8 @@ export default {
     margin:1em;
     padding:1em;
     max-width: 60em;
-    justify-content: space-between;
+    text-align: left;
+    padding-left: 2em;
 }
 .return-btn{
     display: flex;
@@ -81,5 +83,24 @@ export default {
 .link{
     color: red;
     font-weight: bolder;
+}
+.title{
+    text-decoration: underline;
+}
+.detail{
+    padding-left: 1.5em;
+}
+.picture{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    max-width: 80%;
+    max-height: 80%;
+}
+.essential-informations{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    line-height:50%
 }
 </style>
